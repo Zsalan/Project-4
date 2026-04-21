@@ -8,11 +8,12 @@ This project evaluates how natural disaster risk is defined using FEMA’s Natio
 
 The purpose of this project is:
 
-To analyze FEMA’s current risk calculation methodology
-To develop an alternative risk model based only on physical hazards
-To compare how different definitions of risk affect results
-To identify potential bias introduced by social vulnerability and resilience variables
-To demonstrate Python as a tool for large-scale data analysis and engineering decision-making
+To evaluate the existing risk assessment methodology at FEMA
+To create a new risk model relying solely on physical risks
+To examine the impact of various definitions of risk on calculations
+To pinpoint any biases introduced through social vulnerability and resilience factors
+To prove the utility of Python in large-scale data analytics and engineering decisions
+
 ## Project Overview
 
 Two states were analyzed at the census tract level using both:
