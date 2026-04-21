@@ -1,163 +1,172 @@
 # Project-4
 
-## NRI Risk Analysis and Model Comparison
+NRI Risk Analysis and Model Comparison
+
 This Python Programming Assignment 4 is completed by Abdi Aden for CIVE 202 and is intended to be shared with the instructor.
 
-## Purpose
-This project evaluates how natural disaster risk is defined using FEMA’s National Risk Index (NRI) and compares it to an independently developed hazard-based risk model.
+# Purpose
 
-The purpose of this project is:
+This project involves the analysis of real-world data related to natural disaster risk. The project involves the following:
 
-To evaluate the existing risk assessment methodology at FEMA
-To create a new risk model relying solely on physical risks
-To examine the impact of various definitions of risk on calculations
-To pinpoint any biases introduced through social vulnerability and resilience factors
-To prove the utility of Python in large-scale data analytics and engineering decisions
+FEMA National Risk Index (NRI) - national disaster risk data
 
-## Project Overview
+ATSDR Social Vulnerability Index (SVI) - community vulnerability data
 
-Two states were analyzed at the census tract level using both:
+## The purpose of the project is:
 
-## FEMA’s NRI Risk Model
-A custom hazard-based model (earthquake + wildfire only)
+To evaluate FEMA’s current risk assessment methodology
+To create a custom hazard-based risk model using physical variables only
+To compare FEMA risk scores with custom risk calculations
+To analyze how social vulnerability and resilience affect results
+To demonstrate the use of Python in engineering data analysis and decision-making
 
-The comparison highlights how removing social variables changes:
+The project also shows the potential for Python to be used as an engineering tool instead of traditional tools such as Excel.
 
-Risk rankings
-Spatial distribution of high-risk areas
-Interpretation of disaster vulnerability
 Repository Contents
 
-This repository includes all required materials for Project #4:
+This repository includes all the required materials for Project #4. The materials are as follows:
 
-### README.md
-– Overview of the project and instructions to run the code
-### Python Code (.ipynb)
-– Jupyter Notebook used for full analysis and visualization
-### Scope of Work (SOW)
-– Detailed plan outlining variables, datasets, and analysis approach
-### Annotated Code Document (ACD)
-– Line-by-line explanation of the Python code
-### Gantt Chart
-– Timeline of project tasks and dependencies
-### Engineering Timesheet
-– Log of hours worked and task distribution
-### Written Report / Summary
-– Final report including methods, results, and discussion
-### Raw Data Files
-– NRI dataset and supporting files used for analysis
-How to Run the Code
+README.md
+- A summary of the project and a guide on how to run the code
 
-Make sure Python is installed with the following libraries:
+Scope of Work (SOW)
+- A detailed outline of the project activities and requirements
 
-pip install pandas numpy matplotlib seaborn geopandas
+Annotated Code Document (ACD)
+- An explanation of the Python code written
 
-Open the notebook:
+Technical Report
+- A comprehensive report comprising an introduction, methods, results, and discussion
 
-Project4_CIVE-202_Abdi-Aden_Code.ipynb
+Gantt Chart
+- A project plan showing the project timeline and scheduling
 
-Run each section in order:
+Engineering Timesheet
+- A log of the hours spent working and the activities completed
 
-1. Import Libraries
-pandas
-numpy
-matplotlib
-seaborn
-geopandas
+Python Code (.ipynb)
+- A Jupyter Notebook that is used to produce the analysis and results
 
-3. Load Data
-NRI dataset
-SVI dataset (if applicable)
+Datasets (NRI, SVI, Shapefile)
+- Data required for the project
 
-4. Data Cleaning
-Select relevant variables:
-Earthquake risk variables
-Wildfire risk variables
-FEMA risk score
-Handle missing values
-Ensure consistent merge keys (STCNTY)
+## How to Run the Code
 
-5. Data Processing
-Merge datasets
-Calculate hazard-based risk:
+Make sure you have Python installed with the following libraries:
+
+pip install pandas numpy matplotlib geopandas scikit-learn
+
+Open the file:
+
+Project-4_CIVE-102_AbdiAden.ipynb
+
+in Jupyter Notebook or VS Code
+
+# Run each section top to bottom:
+
+## Import Libraries
+Loads pandas, numpy, matplotlib, geopandas, scikit-learn
+
+Load Datasets
+Reads: Alaska NRI California NRI Alaska SVI California SVI Shapefile
+
+## Data Cleaning
+Selects variables: earthquake, wildfire, cold wave, SOVI, RESL
+Handles missing values using median replacement
+Fixes merge keys (STCNTY, TRACTFIPS)
+Removes duplicates
+
+Data Processing
+Merges datasets
+## Calculates hazard-based risk:
+
 Earthquake Risk = ERQK_AFREQ × ERQK_EXPB
 Wildfire Risk = WFIR_AFREQ × WFIR_EXPB
-Total Custom Risk = Earthquake + Wildfire
+Cold Wave Risk = CWAV_AFREQ × CWAV_EXPB
 
-7. Analysis
-Group data by county or tract
-Compute mean and summary statistics
-Normalize values for comparison
+Normalizes values and creates custom risk score
 
-9. Visualization
+# Data Visualization
 
 The code generates:
 
-Bar chart comparing:
-FEMA Risk vs Custom Risk
-Tables showing:
-Mean risk values per state
-Optional maps (if GeoPandas used)
-Results
+## Maps
+- FEMA Risk vs Custom Risk (side-by-side)
 
-Key findings from the analysis include:
+## Bar Charts
+- Top 10 highest risk counties
+- Top 10 lowest risk counties
+
+## Tables
+- Mean risk comparisons by county
+
+After running the code the program will:
+
+Display all maps and charts
+Show comparisons between FEMA and custom risk
+Provide visual insight into how risk definitions change results
+
+## Results
 
 Removing social variables significantly changes risk rankings
-Some areas classified as high risk by FEMA are not high risk in the hazard-only model
-FEMA’s model reflects broader vulnerability, not just physical hazard exposure
-Custom model isolates physical risk but ignores community impact
-Engineering Relevance
+Some areas ranked high by FEMA are not high in the hazard-only model
+FEMA’s model reflects both hazard and social vulnerability
+The custom model isolates physical hazard risk only
+Risk results vary depending on how risk is defined
 
-This project is important for:
+# Engineering Relevance
 
-Disaster risk assessment
-Infrastructure planning
-Emergency management
-Resource allocation decisions
-Policy development
+## This project is important for:
 
-It shows how model assumptions directly influence engineering decisions.
+- Disaster risk assessment
+- Infrastructure planning
+- Emergency management
+- Resource allocation
+- Public policy decisions
 
-## Project Timeline
+# Project Timeline
 
-The project followed a structured workflow:
+## The project followed a structured schedule including:
 
-Data review and understanding
-Data cleaning and merging
+Data review
+Cleaning and processing
 Risk model development
-Statistical analysis
 Visualization creation
 Report writing
 
-(See Gantt Chart for full schedule and dependencies)
+(Look at Gantt Chart for full breakdown)
 
-## Work Summary
+Work Summary
 
-Total Hours Worked: (update with your final number)
+Total Hours Worked: 36.8
 
-Tasks included:
+## Tasks included:
 
-Data preprocessing
+Data cleaning
 Model development
 Visualization
 Report writing
 Debugging and validation
-Final Deliverables
-Python Code (.ipynb)
-Annotated Code Document
-Scope of Work
-Gantt Chart
-Engineering Timesheet
-Written Report
-Raw Data Files
-GitHub Repository
-GitHub Link Included
 
-The GitHub repository contains all required materials for submission and reproducibility.
+## Final Deliverables
+
+Python Code (.ipynb)
+
+Annotated Code Document
+
+Scope of Work
+
+Gantt Chart
+
+Engineering Timesheet
+
+Technical Report
+
+GitHub Repository
 
 ## References
 
 FEMA National Risk Index (NRI)
 ATSDR Social Vulnerability Index (SVI)
+FEMA Risk Methodology Documentation
 CIVE 202 Course Materials
-FEMA Documentation on Risk Calculation
